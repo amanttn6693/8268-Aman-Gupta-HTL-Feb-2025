@@ -1,0 +1,7 @@
+Q1)Q1.Print current time
+Ans. 
+Q2)Write a Sightly template named pageTitleTemplate that takes a single parameter title and renders it within a <h1> tag.
+Ans.
+Q3)Read the title and description property from the current page and display it as title+description .
+Q4)Write a Sightly script that checks if a variable named isLoggedIn is true. If isLoggedIn is true, display the message "Welcome back!" Otherwise, display the message "Please log in to continue.
+Q5)Given an array named colors containing three colors red, brown, and black. write a Sightly script to loop through the array and display each color within an unordered list (<ul>).
