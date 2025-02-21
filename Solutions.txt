@@ -1,7 +1,67 @@
 Q1)Q1.Print current time
-Ans. 
+Ans.  <!DOCTYPE html>
+      <html data-sly-use.logic="logic.js">
+      <head>
+          <title>${currentPage.title}</title>
+          <meta charset="utf-8">
+      </head>
+      <body>
+      <p>${logic.currentTime}</p>
+      </body>
+      </html>
+
+      logic.js
+      use(function () {
+    var date = new Date();
+    return {
+        currentTime: date.toLocaleString()
+    };
+});
+
 Q2)Write a Sightly template named pageTitleTemplate that takes a single parameter title and renders it within a <h1> tag.
 Ans.
+        <template data-sly-template.pageTitleTemplate="${@ title}">
+        <h1>${title}</h1>
+        </template>
+        
+        <sly data-sly-call="${pageTitleTemplate @ title='Welcome to My Page'}"/>
+
 Q3)Read the title and description property from the current page and display it as title+description .
+Ans. 
+        <p>${currentPage.title}+ ${currentPage.description}</p>
+
 Q4)Write a Sightly script that checks if a variable named isLoggedIn is true. If isLoggedIn is true, display the message "Welcome back!" Otherwise, display the message "Please log in to continue.
+Ans.    <!DOCTYPE html>
+        <html data-sly-use.logic="logic.js">
+        <head>
+            <title>${currentPage.title}</title>
+            <meta charset="utf-8">
+        </head>
+        <body>
+        <sly data-sly-test="${logic.isLoggedIn}">
+            <p>Welcome back!</p>
+        </sly>
+        <sly data-sly-test="${!logic.isLoggedIn}">
+            <p>Please log in to continue.</p>
+        </sly>
+        </body>
+        </html>
+
+
 Q5)Given an array named colors containing three colors red, brown, and black. write a Sightly script to loop through the array and display each color within an unordered list (<ul>).
+Ans.    <!DOCTYPE html>
+        <html data-sly-use.logic="logic.js">
+        <head>
+            <title>${currentPage.title}</title>
+            <meta charset="utf-8">
+        </head>
+        <body>
+        <ul>
+            <sly data-sly-list.color="${logic.colors}">
+                <li>${color}</li>
+            </sly>
+        </ul>
+        </body>
+        </html>
+
+
